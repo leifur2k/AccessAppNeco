@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignInUpAct">
+
+    <Button
+        android:id="@+id/bAvatar2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/avatar"
+        app:layout_constraintEnd_toEndOf="@+id/etLogin2"
+        app:layout_constraintStart_toStartOf="@+id/etLogin2"
+        app:layout_constraintTop_toBottomOf="@+id/imAvatar2" />
+
+    <EditText
+        android:id="@+id/etLogin2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/login"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/imAvatar2"
+        app:layout_constraintStart_toStartOf="@+id/imAvatar2"
+        app:layout_constraintTop_toBottomOf="@+id/bAvatar2" />
+
+    <EditText
+        android:id="@+id/etPassword2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/etLogin2"
+        app:layout_constraintStart_toStartOf="@+id/etLogin2"
+        app:layout_constraintTop_toBottomOf="@+id/etLogin2" />
+
+    <EditText
+        android:id="@+id/etName2_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/etPassword2"
+        app:layout_constraintStart_toStartOf="@+id/etPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword2" />
+
+    <EditText
+        android:id="@+id/etName2_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/name1"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/etName2_1"
+        app:layout_constraintStart_toStartOf="@+id/etName2_1"
+        app:layout_constraintTop_toBottomOf="@+id/etName2_1" />
+
+    <EditText
+        android:id="@+id/etName2_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/name2"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/etName2_2"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/etName2_2"
+        app:layout_constraintTop_toBottomOf="@+id/etName2_2" />
+
+    <Button
+        android:id="@+id/bDone2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/done"
+        app:layout_constraintEnd_toEndOf="@+id/etPassword2"
+        app:layout_constraintStart_toStartOf="@+id/etPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/etName2_3" />
+
+    <ImageView
+        android:id="@+id/imAvatar2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/smile" />
+</androidx.constraintlayout.widget.ConstraintLayout>
