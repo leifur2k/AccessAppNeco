@@ -11,7 +11,7 @@ import com.example.android.necointent.databinding.ActivitySingUpInBinding
 class SignInUpAct : AppCompatActivity() {
 
     private lateinit var bindingClass : ActivitySingUpInBinding
-    private var signState = "Empty1"
+    private var signState = "Empty"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
