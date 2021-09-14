@@ -18,15 +18,16 @@ class SignInUpAct : AppCompatActivity() {
 
         bindingClass = ActivitySingUpInBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
-
+        // Принимаем msg и реквест код
         signState = intent.getStringExtra(Constance.SIGN_STATE)!!
+        // Проверяем какое пришло msg
         if (signState == Constance.SIGN_IN_STATE){
             bindingClass.bAvatar2.visibility = View.INVISIBLE
             bindingClass.etName21.visibility = View.GONE
             bindingClass.etName22.visibility = View.GONE
             bindingClass.etName23.visibility = View.GONE
         }
-
+        // При нажатии на кнопку ГОТОВО происходит вот это
         bindingClass.bDone2.setOnClickListener {
             if (signState == Constance.SIGN_UP_STATE) {
                 val intent = Intent()
@@ -46,7 +47,7 @@ class SignInUpAct : AppCompatActivity() {
             }
 
         }
-
+        // При нажатии на кнопку Аватар - появляется Аватарка
         bindingClass.bAvatar2.setOnClickListener {
             bindingClass.imAvatar2.visibility = View.VISIBLE
         }

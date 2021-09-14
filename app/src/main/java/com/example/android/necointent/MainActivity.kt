@@ -11,6 +11,7 @@ import com.example.android.necointent.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var bindingClass : ActivityMainBinding
+    // Создаем глобальные переменные, чтобы сюда ловить введенные данные при регистрации пользователя на втором активити
     private var login: String = "Empty"
     private var password: String = "Empty"
     private var name: String = "Empty"
@@ -22,15 +23,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
-
+        // Нажимаем на кнопку bSignIn1 и открывается второе активити + по ключу отправляем сообщение(в константах) и реквест код + Ждем ответа по реквест коду
         bindingClass.bSignIn1.setOnClickListener {
-
             val intent = Intent(this, SignInUpAct::class.java)
             intent.putExtra(Constance.SIGN_STATE, Constance.SIGN_IN_STATE)
             startActivityForResult(intent, Constance.REQUEST_CODE_SIGN_IN)
-
         }
-
+        // Нажимаем на кнопку bSignUp1 и ПРОВЕРКА или открытие второго активити + по ключу отправляем сообщение(в константах) и реквест код + Ждем ответа по реквест коду
         bindingClass.bSignUp1.setOnClickListener {
             if(bindingClass.imAvatar1.isVisible) {
                 bindingClass.imAvatar1.visibility = View.INVISIBLE
@@ -47,10 +46,10 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
+    // Запускается когда возвращаем ответ со второго активити по реквест коду.
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
+        // Если реквест код такой, то
         if(requestCode == Constance.REQUEST_CODE_SIGN_IN){
             val l = data?.getStringExtra(Constance.LOGIN)
             val p = data?.getStringExtra(Constance.PASSWORD)
@@ -65,6 +64,7 @@ class MainActivity : AppCompatActivity() {
                 bindingClass.tv1.visibility = View.VISIBLE
                 bindingClass.tv1.text = "Такого аккаунта не существует"
             }
+        // Если реквест код иной, то
         } else if (requestCode == Constance.REQUEST_CODE_SIGN_UP){
             login = data?.getStringExtra(Constance.LOGIN)!!
             password = data?.getStringExtra(Constance.PASSWORD)!!
